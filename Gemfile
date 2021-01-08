@@ -14,6 +14,7 @@ gem 'sass-rails', '>= 6'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
+gem 'webpacker'
 gem 'sdoc', group: :doc
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
