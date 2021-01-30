@@ -20,6 +20,7 @@ gem 'webpacker'
 gem 'sdoc', group: :doc
 
 gem 'rails-controller-testing'
+gem 'bcrypt', '3.1.13'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 #gem 'webpacker', '~> 4.0'
