@@ -11,6 +11,14 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                 password_confirmation: "bar" }}
     end
     assert_template 'users/new'
+    assert_select 'div#error_explanation'
+    assert_select 'div.field_with_errors'
+    assert_select 'ul' do
+      assert_select 'li', 'Name can\'t be blank'
+      assert_select 'li', 'Email is invalid'
+      assert_select 'li', 'Password confirmation doesn\'t match Password'
+      assert_select 'li', 'Password is too short (minimum is 6 characters)'  
+    end
   end
 
   test "valid signup information" do
@@ -20,9 +28,10 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                 email: "user@example.com",
                                 password: "password",
                                 password_confirmation: "password" }}
-      follow_redirect!
     end
+    follow_redirect!
     assert_template 'users/show'
+    assert is_logged_in?
   end
 
 end
