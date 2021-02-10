@@ -20,6 +20,9 @@ gem 'sdoc', group: :doc
 
 
 gem 'bcrypt', '3.1.13'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 #gem 'webpacker', '~> 4.0'
