@@ -72,7 +72,7 @@ Rails.application.configure do
     :port                 =>    '587',
     :authentication       =>    :plain,
     :user_name            =>    'apikey',
-    :password             =>    'APIKEYFORMYAPP',
+    :password             =>    ENV['APIKEYFORMYAPP'],
     :domain               =>    'heroku.com',
     :enable_starttls_auto =>    true
   }
