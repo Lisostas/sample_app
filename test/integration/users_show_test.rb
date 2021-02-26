@@ -1,22 +1,18 @@
 require 'test_helper'
 
 class UsersShowTest < ActionDispatch::IntegrationTest
-  
-  def setup
-    @activated_user = users(:archer)
-    @unactivated_user = users(:lana)    
-  end
+    def setup
+      @admin     = users(:michael)
+      @non_admin = users(:archer)
+    end
 
-  test "should redirect to root when user unactivated" do
-    log_in_as (@unactivated_user)
-    get user_path(@unactivated_user)
-    assert_redirected_to root_url
-  end
-
-  test "should show only activated users" do
-    log_in_as (@activated_user)
-    get user_path(@unactivated_user)
-    assert_redirected_to root_url
-  end
+    test 'display only activated users' do
+      log_in_as(@non_admin)
+      get users_path
+      first_page_of_users = User.where(activated: false).paginate(page: 1)
+      first_page_of_users.each do |user|
+        assert_select 'a[href=?]', user_path(user), text: user.name, count: 0
+      end
+    end
 
 end

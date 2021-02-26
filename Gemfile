@@ -23,6 +23,9 @@ gem 'bcrypt', '3.1.13'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'active_storage_validations'
+gem 'image_processing'
+gem 'mini_magick'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 #gem 'webpacker', '~> 4.0'
@@ -80,6 +83,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'aws-sdk-s3', require: false
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
