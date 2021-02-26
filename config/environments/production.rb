@@ -68,12 +68,13 @@ Rails.application.configure do
   host = 'https://sleepy-bayou-06121.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address              =>    ENV['MAILGUN_SMTP_SERVER'],
-    :port                 =>    ENV['MAILGUN_SMTP_PORT'],
+    :address              =>    'smtp.sendgrid.net',
+    :port                 =>    587,
     :authentication       =>    :plain,
-    :user_name            =>    ENV['MAILGUN_SMTP_LOGIN'],
-    :password             =>    ENV['MAILGUN_SMTP_PASSWORD'],
+    :user_name            =>    'apikey',
+    :password             =>    ENV['SENDGRID_API_KEY'],
     :domain               =>    'sleepy-bayou-06121.heroku.com'
+    :enable_starttls_auto =>     true
   }
   ActionMailer::Base.delivery_method = :smtp
   # Ignore bad email addresses and do not raise email delivery errors.
