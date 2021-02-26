@@ -73,7 +73,7 @@ Rails.application.configure do
     :authentication       =>    :plain,
     :user_name            =>    'apikey',
     :password             =>    ENV['SENDGRID_API_KEY'],
-    :domain               =>    'sleepy-bayou-06121.heroku.com'
+    :domain               =>    'sleepy-bayou-06121.heroku.com',
     :enable_starttls_auto =>     true
   }
   ActionMailer::Base.delivery_method = :smtp
