@@ -68,7 +68,6 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   #gem 'webdrivers'
   gem 'minitest-reporters'
-  gem 'mini_backtrace'
   gem 'guard-minitest'
   gem 'capybara',           '3.28.0'
   gem'selenium-webdriver',  '3.142.4'
