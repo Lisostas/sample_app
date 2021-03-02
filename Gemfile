@@ -27,8 +27,7 @@ gem 'active_storage_validations'
 gem 'image_processing'
 gem 'mini_magick'
 
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-#gem 'webpacker', '~> 4.0'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -48,8 +47,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3', '~> 1.4'
-  
-  
 end
 
 group :development do
@@ -62,11 +59,6 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  #gem 'capybara', '>= 2.15'
- # gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
-  #gem 'webdrivers'
   gem 'minitest-reporters'
   gem 'guard-minitest'
   gem 'capybara',           '3.28.0'
@@ -75,8 +67,6 @@ group :test do
   gem 'rails-controller-testing'
   gem 'minitest'
   gem 'guard'
-
-
 end
 
 group :production do
